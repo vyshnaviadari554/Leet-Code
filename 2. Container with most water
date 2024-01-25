@@ -1,0 +1,19 @@
+class Solution {
+    public int maxArea(int[] arr) {
+    int n= arr.length;
+    int prod=0;
+    int i=0;
+    int j=n-1;
+    while(i<j){
+            int area = Math.min(arr[i], arr[j]) * (j - i);
+            prod = Math.max(prod, area);
+            if(arr[i]<arr[j]){
+                i++;
+            }else{
+                j--;
+            }
+        }
+    
+    return prod;
+    }
+}
